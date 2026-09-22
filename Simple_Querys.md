@@ -1,4 +1,4 @@
-## Select
+# Select
 select * from students;
 select first_name,marks from students;
 select first_name,marks from students where marks >90; 
