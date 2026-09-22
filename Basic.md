@@ -138,4 +138,12 @@ IF()
 COALESCE()
 NULLIF()
 
+### GROUP BY & HAVING
+GROUP BY
+HAVING
+COUNT
 
+SELECT department_id, AVG(salary)
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 60000;
