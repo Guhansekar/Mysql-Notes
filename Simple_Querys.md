@@ -41,3 +41,43 @@ select first_name,department,age from students where age between 20 and 21 order
 select distinct city from students;
 
 select distinct department,city from students;
+
+## Aggregate Functions
+**Aggregate functions are used to perform calculations on multiple rows and return a single result**
+
+select count(*) from students;
+
+select count(*) as total_students from students;
+
+select count(email) as total_email from students;
+
+select count(*) as total_students,sum(marks) as total_mark from students where department='Computer Science';
+
+select avg(marks) as avg_mark from students where department='Computer Science';
+
+select min(marks) as min_mark from students where department='Computer Science';
+
+select max(marks) as max_mark from students where department='Computer Science';
+
+## GROUP BY
+
+GROUP BY is used to group rows that have the same value, so that we can perform aggregate calculations for each group
+
+select count(*) as total ,department from students group by department;
+
+select avg(marks) as average_mark,department from students group by department;
+
+select department,gender,count(*) as total from students group by department,gender;
+
+select department,count(*) as total from students where city='Chennai' group by department;
+
+## HAVING
+
+HAVING is used to filter groups after GROUP BY
+
+WHERE  → filters rows  -  Filters individual rows before grouping
+HAVING → filters groups  - Filters groups after grouping.
+
+select department,count(*) as total from students where city='Chennai' group by department having count(*) >3;
+
+select department,gender,count(*) as total from students where city='Chennai' group by department,gender having count(*)>2 and gender='male';
