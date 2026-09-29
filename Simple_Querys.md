@@ -142,6 +142,69 @@ END → closes the CASE
 
 ## JOINS
 
+CREATE TABLE students_join (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50),
+    age INT,
+    gender VARCHAR(10),
+    department_id INT,
+    marks DECIMAL(5,2),
+  
+    FOREIGN KEY (department_id)
+        
+        REFERENCES departments(department_id)
+);
+
 A JOIN lets you combine data from two or more tables using a related column
 
 select s.student_name,s.marks,d.department_name from students_join as s inner join departments as d on s.department_id = d.department_id; 
+
+## What is LEFT JOIN?
+
+All rows from the left table + matching rows from the right table.
+
+If there is no match in the right table, MySQL returns NULL
+
+If a student's department_id doesn't exist in departments, the department columns become NULL
+
+select s.student_name,s.age,d.department_name from students_join as s left join departments as d on s.department_id=d.department_id;
+
+## RIGHT JOIN
+
+RIGHT JOIN keeps every row from the RIGHT table.
+
+select s.student_name,s.age,d.department_name from students_join as s right join departments as d on s.department_id=d.department_id;
+
+## Multiple JOINs
+
+**ALTER TABLE departments ADD COLUMN hod_id INT;**
+
+**UPDATE departments SET hod_id = 101 WHERE department_id = 1;**
+
+select s.student_name,s.age,d.department_name,h.teacher_name from students_join as s inner join departments as d on s.department_id=d.department_id inner join teachers as h on h.teacher_id=d.hod_id;
+
+## SELF JOIN
+
+A SELF JOIN means joining a table with itself.
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO employees (employee_id, employee_name, manager_id)
+VALUES
+(1, 'Arun', NULL),
+(2, 'Priya', 1),
+(3, 'Ravi', 1),
+(4, 'Karthik', 2),
+(5, 'Sneha', 2),
+(6, 'Vijay', 3);
+
+
+select e.employee_name as employee,m.employee_name as manager from employees as e left join employees as m on e.employee_id = m.manager_id;
+
+select e.employee_name as employee,m.employee_name as manager from employees as e inner join employees as m on e.employee_id = m.manager_id;
+
+SELECT e.employee_name FROM employees AS e INNER JOIN employees AS m ON e.manager_id = m.employee_id WHERE m.employee_name = 'Arun';
