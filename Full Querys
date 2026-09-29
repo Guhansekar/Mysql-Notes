@@ -1,0 +1,277 @@
+show databases;
+create database mysqllearn;
+use mysqllearn;
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    gender VARCHAR(10),
+    age INT,
+    department VARCHAR(50),
+    year_of_study INT,
+    city VARCHAR(50),
+    email VARCHAR(100),
+    marks DECIMAL(5,2)
+);
+
+INSERT INTO students
+(student_id, first_name, last_name, gender, age, department, year_of_study, city, email, marks)
+VALUES
+(1, 'Arun', 'Kumar', 'Male', 20, 'Computer Science', 2, 'Chennai', 'arun.kumar01@gmail.com', 85.50),
+(2, 'Priya', 'Sharma', 'Female', 21, 'Electronics', 3, 'Coimbatore', 'priya.sharma02@gmail.com', 91.00),
+(3, 'Rahul', 'Raj', 'Male', 19, 'Information Technology', 1, 'Madurai', 'rahul.raj03@gmail.com', 78.50),
+(4, 'Anitha', 'Ravi', 'Female', 20, 'Mechanical', 2, 'Chennai', 'anitha.ravi04@gmail.com', 82.00),
+(5, 'Vijay', 'Kumar', 'Male', 22, 'Civil', 4, 'Trichy', 'vijay.kumar05@gmail.com', 69.50),
+(6, 'Sneha', 'Mohan', 'Female', 19, 'Computer Science', 1, 'Salem', 'sneha.mohan06@gmail.com', 94.00),
+(7, 'Karthik', 'Suresh', 'Male', 21, 'Information Technology', 3, 'Chennai', 'karthik.suresh07@gmail.com', 88.50),
+(8, 'Divya', 'Krishnan', 'Female', 20, 'Electronics', 2, 'Madurai', 'divya.krishnan08@gmail.com', 76.00),
+(9, 'Sanjay', 'Ramesh', 'Male', 22, 'Mechanical', 4, 'Coimbatore', 'sanjay.ramesh09@gmail.com', 72.50),
+(10, 'Meena', 'Devi', 'Female', 21, 'Civil', 3, 'Salem', 'meena.devi10@gmail.com', 81.50),
+
+(11, 'Ajay', 'Prakash', 'Male', 19, 'Computer Science', 1, 'Chennai', 'ajay.prakash11@gmail.com', 89.00),
+(12, 'Kavya', 'Srinivasan', 'Female', 20, 'Information Technology', 2, 'Trichy', 'kavya.srinivasan12@gmail.com', 92.50),
+(13, 'Rohit', 'Menon', 'Male', 21, 'Electronics', 3, 'Kochi', 'rohit.menon13@gmail.com', 75.00),
+(14, 'Pooja', 'Nair', 'Female', 22, 'Mechanical', 4, 'Chennai', 'pooja.nair14@gmail.com', 86.50),
+(15, 'Vimal', 'Raj', 'Male', 20, 'Civil', 2, 'Madurai', 'vimal.raj15@gmail.com', 67.00),
+(16, 'Harini', 'Bala', 'Female', 19, 'Computer Science', 1, 'Coimbatore', 'harini.bala16@gmail.com', 95.00),
+(17, 'Dinesh', 'Kumar', 'Male', 21, 'Information Technology', 3, 'Salem', 'dinesh.kumar17@gmail.com', 83.50),
+(18, 'Nandhini', 'Siva', 'Female', 20, 'Electronics', 2, 'Chennai', 'nandhini.siva18@gmail.com', 90.00),
+(19, 'Manoj', 'Kannan', 'Male', 22, 'Mechanical', 4, 'Trichy', 'manoj.kannan19@gmail.com', 71.50),
+(20, 'Aishwarya', 'Ravi', 'Female', 21, 'Civil', 3, 'Madurai', 'aishwarya.ravi20@gmail.com', 88.00),
+
+(21, 'Surya', 'Narayan', 'Male', 19, 'Computer Science', 1, 'Chennai', 'surya.narayan21@gmail.com', 79.50),
+(22, 'Keerthana', 'Raj', 'Female', 20, 'Information Technology', 2, 'Coimbatore', 'keerthana.raj22@gmail.com', 93.00),
+(23, 'Madhan', 'Kumar', 'Male', 21, 'Electronics', 3, 'Salem', 'madhan.kumar23@gmail.com', 77.50),
+(24, 'Swetha', 'Mohan', 'Female', 22, 'Mechanical', 4, 'Chennai', 'swetha.mohan24@gmail.com', 84.00),
+(25, 'Gokul', 'Ravi', 'Male', 20, 'Civil', 2, 'Madurai', 'gokul.ravi25@gmail.com', 73.50),
+(26, 'Ramya', 'Suresh', 'Female', 19, 'Computer Science', 1, 'Trichy', 'ramya.suresh26@gmail.com', 96.00),
+(27, 'Naveen', 'Raj', 'Male', 21, 'Information Technology', 3, 'Chennai', 'naveen.raj27@gmail.com', 87.50),
+(28, 'Lakshmi', 'Devi', 'Female', 20, 'Electronics', 2, 'Coimbatore', 'lakshmi.devi28@gmail.com', 80.00),
+(29, 'Praveen', 'Kumar', 'Male', 22, 'Mechanical', 4, 'Salem', 'praveen.kumar29@gmail.com', 68.50),
+(30, 'Shalini', 'Ravi', 'Female', 21, 'Civil', 3, 'Chennai', 'shalini.ravi30@gmail.com', 91.50),
+
+(31, 'Vasanth', 'Kumar', 'Male', 19, 'Computer Science', 1, 'Madurai', 'vasanth.kumar31@gmail.com', 82.50),
+(32, 'Deepika', 'Mohan', 'Female', 20, 'Information Technology', 2, 'Trichy', 'deepika.mohan32@gmail.com', 89.50),
+(33, 'Suresh', 'Babu', 'Male', 21, 'Electronics', 3, 'Chennai', 'suresh.babu33@gmail.com', 74.00),
+(34, 'Monika', 'Raj', 'Female', 22, 'Mechanical', 4, 'Coimbatore', 'monika.raj34@gmail.com', 85.00),
+(35, 'Hari', 'Prasad', 'Male', 20, 'Civil', 2, 'Salem', 'hari.prasad35@gmail.com', 70.50),
+(36, 'Pavithra', 'Kumar', 'Female', 19, 'Computer Science', 1, 'Chennai', 'pavithra.kumar36@gmail.com', 97.00),
+(37, 'Ashwin', 'Ravi', 'Male', 21, 'Information Technology', 3, 'Madurai', 'ashwin.ravi37@gmail.com', 86.00),
+(38, 'Bhavya', 'Suresh', 'Female', 20, 'Electronics', 2, 'Trichy', 'bhavya.suresh38@gmail.com', 92.00),
+(39, 'Lokesh', 'Kumar', 'Male', 22, 'Mechanical', 4, 'Chennai', 'lokesh.kumar39@gmail.com', 65.50),
+(40, 'Nisha', 'Devi', 'Female', 21, 'Civil', 3, 'Coimbatore', 'nisha.devi40@gmail.com', 83.00),
+
+(41, 'Rakesh', 'Mohan', 'Male', 19, 'Computer Science', 1, 'Salem', 'rakesh.mohan41@gmail.com', 90.50),
+(42, 'Ishita', 'Ravi', 'Female', 20, 'Information Technology', 2, 'Chennai', 'ishita.ravi42@gmail.com', 94.50),
+(43, 'Ganesh', 'Kumar', 'Male', 21, 'Electronics', 3, 'Madurai', 'ganesh.kumar43@gmail.com', 76.50),
+(44, 'Sowmya', 'Raj', 'Female', 22, 'Mechanical', 4, 'Trichy', 'sowmya.raj44@gmail.com', 88.50),
+(45, 'Balaji', 'Suresh', 'Male', 20, 'Civil', 2, 'Chennai', 'balaji.suresh45@gmail.com', 72.00),
+(46, 'Mahalakshmi', 'Ravi', 'Female', 19, 'Computer Science', 1, 'Coimbatore', 'mahalakshmi.ravi46@gmail.com', 98.00),
+(47, 'Vignesh', 'Kumar', 'Male', 21, 'Information Technology', 3, 'Salem', 'vignesh.kumar47@gmail.com', 84.50),
+(48, 'Anjali', 'Mohan', 'Female', 20, 'Electronics', 2, 'Chennai', 'anjali.mohan48@gmail.com', 91.00),
+(49, 'Sathish', 'Raj', 'Male', 22, 'Mechanical', 4, 'Madurai', 'sathish.raj49@gmail.com', 69.00),
+(50, 'Riya', 'Kumar', 'Female', 21, 'Civil', 3, 'Trichy', 'riya.kumar50@gmail.com', 87.00);
+
+select * from students;
+select first_name,marks from students;
+
+select first_name,marks from students where marks >90; 
+
+select first_name from students where city="Chennai";
+
+select first_name,gender from students where department="Computer Science";
+
+select first_name from students where age>20; 
+
+select first_name from students where student_id=25;
+
+select first_name,department from students where department <> "Computer Science";
+
+select first_name,department from students where department != "Computer Science";
+
+select first_name,department,age from students where age between 20 and 21;
+
+select first_name,department,age from students where age = 20 or department="Computer Science";
+
+select first_name,department,age from students where not age=20;
+
+select first_name,department,age from students where gender="female" and (age=20 or department='Computer Science') and city='Chennai';
+
+select first_name,department,age from students where age between 20 and 21 order by first_name;
+
+select first_name,department,age from students where age between 20 and 21 order by first_name desc;
+
+select first_name,department,age from students where age between 20 and 21 order by first_name,department desc;
+
+select first_name,department,age from students where age between 20 and 21 order by first_name limit 2;
+
+select distinct city from students;
+
+select distinct department,city from students;
+
+select count(*) from students;
+
+select count(*) as total_students from students;
+
+select count(email) as total_email from students;
+
+select count(*) as total_students,sum(marks) as total_mark from students where department='Computer Science';
+
+select avg(marks) as avg_mark from students where department='Computer Science';
+
+select min(marks) as min_mark from students where department='Computer Science';
+
+select max(marks) as max_mark from students where department='Computer Science';
+
+select count(*) as total ,department from students group by department;
+
+select avg(marks) as average_mark,department from students group by department;
+
+select department,gender,count(*) as total from students group by department,gender;
+
+select department,count(*) as total from students where city='Chennai' group by department;
+
+select department,count(*) as total from students where city='Chennai' group by department having count(*) >3;
+
+select department,gender,count(*) as total from students where city='Chennai' group by department,gender having count(*)>2 and gender='male';
+
+select department,first_name from students where first_name like 'a%';
+
+select department,first_name from students where first_name like 'a%n';
+
+select department,first_name from students where first_name like '%a%';
+
+SELECT * FROM students WHERE first_name LIKE 'A_u%';
+
+select first_name from students where city in('chennai','selam');
+
+select first_name from students where city not in('chennai','selam');
+
+select first_name from students where age  between 20 and 21;
+
+select * from students where email  is null;
+
+select * from students where email is not null;
+
+select first_name,marks,marks+10 as new_mark from students;
+
+select first_name,department,marks,case when marks >= 90 then 'Exellent' when marks >= 80 then 'good' when marks>=70 then 'better'
+else 'try improve' end as performance from students; 
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50),
+    hod_name VARCHAR(50)
+);
+
+INSERT INTO departments (department_id, department_name, hod_name)
+VALUES
+(1, 'Computer Science', 'Dr. Kumar'),
+(2, 'Electronics', 'Dr. Ravi'),
+(3, 'Information Technology', 'Dr. Priya'),
+(4, 'Mechanical', 'Dr. Suresh'),
+(5, 'Civil', 'Dr. Anitha');
+
+CREATE TABLE students_join (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50),
+    age INT,
+    gender VARCHAR(10),
+    department_id INT,
+    marks DECIMAL(5,2),
+    FOREIGN KEY (department_id)
+        REFERENCES departments(department_id)
+);
+
+INSERT INTO students_join
+(student_id, student_name, age, gender, department_id, marks)
+VALUES
+(101, 'Arun', 20, 'Male', 1, 89.50),
+(102, 'Anitha', 21, 'Female', 2, 92.00),
+(103, 'Ravi', 20, 'Male', 3, 78.50),
+(104, 'Priya', 19, 'Female', 1, 95.00),
+(105, 'Karthik', 22, 'Male', 4, 81.00),
+(106, 'Sneha', 20, 'Female', 2, 88.50),
+(107, 'Vijay', 21, 'Male', 3, 74.00),
+(108, 'Divya', 19, 'Female', 1, 91.00),
+(109, 'Rahul', 22, 'Male', 4, 85.50),
+(110, 'Meena', 20, 'Female', 5, 79.00),
+(111, 'Ajay', 21, 'Male', 1, 87.00),
+(112, 'Swathi', 19, 'Female', 2, 94.00),
+(113, 'Manoj', 22, 'Male', 3, 69.50),
+(114, 'Keerthi', 20, 'Female', 4, 90.00),
+(115, 'Sanjay', 21, 'Male', 5, 76.50);
+
+select s.student_name,s.marks,d.department_name from students_join as s inner join departments as d on s.department_id = d.department_id; 
+
+select s.student_name,s.age,s.marks,d.department_name,d.hod_name from students_join as s inner join departments as d on s.department_id=d.department_id;
+
+select s.student_name,s.age,d.department_name from students_join as s left join departments as d on s.department_id=d.department_id;
+
+select s.student_name,s.age,d.department_name from students_join as s right join departments as d on s.department_id=d.department_id;
+
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY,
+    teacher_name VARCHAR(50),
+    experience INT
+);
+
+INSERT INTO teachers (teacher_id, teacher_name, experience)
+VALUES
+(101, 'Dr. Kumar', 15),
+(102, 'Dr. Priya', 12),
+(103, 'Dr. Ravi', 18),
+(104, 'Dr. Suresh', 20),
+(105, 'Dr. Anitha', 10),
+(106, 'Dr. Mohan', 14);
+
+ALTER TABLE departments
+ADD COLUMN hod_id INT;
+
+UPDATE departments
+SET hod_id = 101
+WHERE department_id = 1;
+
+UPDATE departments
+SET hod_id = 102
+WHERE department_id = 2;
+
+UPDATE departments
+SET hod_id = 103
+WHERE department_id = 3;
+
+UPDATE departments
+SET hod_id = 104
+WHERE department_id = 4;
+
+UPDATE departments
+SET hod_id = 105
+WHERE department_id = 5;
+
+UPDATE departments
+SET hod_id = 106
+WHERE department_id = 6;
+
+select s.student_name,s.age,d.department_name,h.teacher_name from students_join as s inner join departments as d on s.department_id=d.department_id inner join teachers as h on h.teacher_id=d.hod_id;
+
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    manager_id INT
+);
+
+INSERT INTO employees (employee_id, employee_name, manager_id)
+VALUES
+(1, 'Arun', NULL),
+(2, 'Priya', 1),
+(3, 'Ravi', 1),
+(4, 'Karthik', 2),
+(5, 'Sneha', 2),
+(6, 'Vijay', 3);
+
+select e.employee_name as employee,m.employee_name as manager from employees as e left join employees as m on e.employee_id = m.manager_id;
+
+select e.employee_name as employee,m.employee_name as manager from employees as e inner join employees as m on e.employee_id = m.manager_id;
+
+SELECT e.employee_name FROM employees AS e INNER JOIN employees AS m ON e.manager_id = m.employee_id WHERE m.employee_name = 'Arun';
