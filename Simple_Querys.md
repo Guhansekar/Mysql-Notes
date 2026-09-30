@@ -208,3 +208,25 @@ select e.employee_name as employee,m.employee_name as manager from employees as 
 select e.employee_name as employee,m.employee_name as manager from employees as e inner join employees as m on e.employee_id = m.manager_id;
 
 SELECT e.employee_name FROM employees AS e INNER JOIN employees AS m ON e.manager_id = m.employee_id WHERE m.employee_name = 'Arun';
+
+## Subqueries
+
+A subquery is a query written inside another query.
+
+First query gets a result → outer query uses that result
+
+select student_name,age,marks from students_join where marks > (select avg(marks) from students_join);
+
+select student_name,age,marks from students_join where marks =(select max(marks) from students_join);
+
+## Correlated Subqueries
+
+A correlated subquery is a subquery that depends on the current row of the outer query.
+
+Unlike a normal subquery, the inner query can run once for each row of the outer query.
+
+normal query -> The average is calculated once, then compared with every student.
+
+select s.student_name,s.age from students_join AS s where s.marks>(select avg(s1.marks) from students_join as s1 where s.department_id=s1.department_id);
+
+s1.department_id means the department of rows being examined by the inner query.
